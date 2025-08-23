@@ -77,7 +77,7 @@ A comprehensive web-based code editor platform that allows users to write, execu
    Create `backend/config.env`:
    ```env
    PORT=5000
-   MONGODB_URI=mongodb+srv://codohub:KJSJrAaRsITtC3k9@cluster0.oskpuy8.mongodb.net/codohub
+   MONGODB_URI=/........................................................................./
    SECRET_KEY=your_jwt_secret_key
    NODE_ENV=development
    ```
