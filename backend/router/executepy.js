@@ -14,14 +14,25 @@ router.post('/execute', async (req, res) => {
     }
 
     const fileName = `temp_${uuidv4()}.py`;
-    const filePath = path.join(__dirname, '../python_runner', fileName);
+    const runnerDir = path.join(__dirname, '../python_runner');
+    const filePath = path.join(runnerDir, fileName);
 
     try {
+        // Ensure runner directory exists
+        try {
+            if (!fs.existsSync(runnerDir)) {
+                fs.mkdirSync(runnerDir, { recursive: true });
+            }
+        } catch (dirErr) {
+            return res.status(500).json({ success: false, output: '', error: `Server error: ${dirErr.message}` });
+        }
+
         // Write code to temporary file
         fs.writeFileSync(filePath, code);
 
         // Execute Python code
-        const pythonProcess = spawn('python', [filePath], {
+        const pythonBin = process.env.PYTHON_BIN || 'python';
+        const pythonProcess = spawn(pythonBin, [filePath], {
             timeout: 10000, // 10 second timeout
             maxBuffer: 1024 * 1024 // 1MB buffer
         });

@@ -8,21 +8,54 @@ const LandingPage = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
-          <div className="hero-content">
-            <h1 className="hero-title">
-              Welcome to <span className="gradient-text">CodeHub</span>
-            </h1>
-            <p className="hero-subtitle">
-              The ultimate online code editor with multi-language support, 
-              voice-to-text conversion, and real-time collaboration features.
-            </p>
-            <div className="hero-buttons">
-              <Link to="/register" className="btn btn-primary btn-large">
-                Get Started
-              </Link>
-              <Link to="/login" className="btn btn-secondary btn-large">
-                Sign In
-              </Link>
+          <div className="hero-grid">
+            <div className="hero-content">
+              <h1 className="hero-title">
+                Code faster with <span className="gradient-text">CodeHub</span>
+              </h1>
+              <p className="hero-subtitle">
+                A powerful online code studio for JavaScript, Python, and HTML/CSS —
+                with real‑time preview, voice & image to text utilities, and a delightful UI.
+              </p>
+              <div className="hero-buttons">
+                <Link to="/register" className="btn btn-primary btn-large" aria-label="Create your free CodeHub account">
+                  Get Started Free
+                </Link>
+                <Link to="/login" className="btn btn-secondary btn-large" aria-label="Sign in to CodeHub">
+                  Sign In
+                </Link>
+              </div>
+              <div className="hero-stats" aria-hidden="true">
+                <div className="stat"><span>3+</span> languages</div>
+                <div className="stat"><span>Live</span> preview</div>
+                <div className="stat"><span>OCR</span> & Voice</div>
+              </div>
+            </div>
+            <div className="hero-preview" role="img" aria-label="Code preview panel">
+              <div className="preview-window">
+                <div className="preview-window-header">
+                  <span className="dot" />
+                  <span className="dot" />
+                  <span className="dot" />
+                </div>
+                <pre className="preview-code">
+{`function greet(name) {
+  const time = new Date().toLocaleTimeString();
+  return 'Hello, ' + name + '!\\nIt\\'s ' + time + '. Happy coding with CodeHub.';
+}
+
+console.log(greet('Developer'));`}
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div className="trusted-by">
+            <span>Trusted by developers using</span>
+            <div className="logo-row" aria-hidden="true">
+              <span className="logo-badge">React</span>
+              <span className="logo-badge">Vite</span>
+              <span className="logo-badge">Node</span>
+              <span className="logo-badge">MongoDB</span>
             </div>
           </div>
         </div>
