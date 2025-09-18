@@ -22,6 +22,12 @@ const LangList = ({ selectedLanguage, onLanguageChange }) => {
       description: 'HTML and CSS with live preview'
     },
     {
+      id: 'sql',
+      name: 'SQL (SQLite)',
+      icon: '🗄️',
+      description: 'Run SQL queries in-browser'
+    },
+    {
       id: 'voice2text',
       name: 'Voice to Text',
       icon: '🎤',

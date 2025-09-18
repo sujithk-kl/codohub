@@ -3,6 +3,7 @@ import LangList from '../Editor/LangList.jsx';
 import Python from '../Editor/Python.jsx';
 import Javascript from '../Editor/Javascript.jsx';
 import Html from '../Editor/Html.jsx';
+import Sql from '../Editor/Sql.jsx';
 import Voice2Text from '../Editor/Voice2Text.jsx';
 import Image2Text from '../Editor/Image2Text.jsx';
 import './CodingPage.css';
@@ -18,6 +19,8 @@ const CodingPage = ({ user }) => {
         return <Javascript />;
       case 'html':
         return <Html />;
+      case 'sql':
+        return <Sql />;
       case 'voice2text':
         return <Voice2Text />;
       case 'image2text':
